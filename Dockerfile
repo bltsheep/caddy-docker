@@ -17,7 +17,7 @@ LABEL mantainer="Eloy Lopez <elswork@gmail.com>" \
 RUN apk add --no-cache openssh-client git tar curl
 
 # install caddy
-ARG CAD_URL=https://caddyserver.com/download/linux/arm64?plugins=http.cache,http.cors,http.expires,http.git,http.realip\&license=personal\&telemetry=off
+ARG CAD_URL=https://caddy.fr.bleatingsheep.org/download/linux/arm64?plugins=http.cache,http.cors,http.expires,http.git,http.realip,tls.dns.dnspod\&license=personal\&telemetry=off
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
       "${CAD_URL}" \
